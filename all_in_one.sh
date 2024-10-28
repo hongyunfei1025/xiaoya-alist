@@ -2453,7 +2453,7 @@ function install_emby_xiaoya_all_emby() {
 
         # shellcheck disable=SC2154
         if [ "${dev_dri}" == "yes" ]; then
-            extra_parameters="--device /dev/dri:/dev/dri --privileged -e GIDLIST=0,0 -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all"
+            extra_parameters="--gpus all --runtime=nvidia --device /dev/dri:/dev/dri --privileged -e GIDLIST=0,0 -e NVIDIA_VISIBLE_DEVICES=all -e NVIDIA_DRIVER_CAPABILITIES=all"
         fi
 
         get_nsswitch_conf_path
